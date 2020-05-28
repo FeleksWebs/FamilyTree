@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  display: block;
+
+  width: 100%;
+}
+#createNew {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.DefaultDiv {
+  position: relative;
+  background-color: cyan;
+  text-align: center;
+  float: left;
+  border: 1px solid black;
+  width: 100%;
+  z-index: 3;
+}
+
+#createNew {
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  border: 2px solid royalblue;
+  background-color: white;
+}
+#createNew:hover {
+  background-color: royalblue;
+  color: white;
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.ManuScreen {
+  margin-top: 200px;
+  padding: 0;
+  height: 240px;
+  background-color: white;
+  border-top: 4px solid royalblue;
+  display: none;
+  text-align: center;
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.ManuScreen button {
+  height: 30px;
+  cursor: pointer;
+}
+.closeBtn {
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+
+#CloseMenu {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #ff726f;
+  color: black;
+  cursor: pointer;
+}
+#CloseMenu:hover {
+  background-color: #ff726f;
+  color: white;
+}
+.userInfo {
+  margin-top: 30px;
+  position: relative;
+  height: 40px;
+}
+.AddMember {
+  margin-top: 20px;
+  height: 50px;
+}
+#deleteUser {
+  border: 2px solid red;
+  border-radius: 5px;
+  width: 45%;
+}
+#deleteUser:hover {
+  color: white;
+  background-color: red;
+}
+.ManuScreen button {
+  border: 2px solid green;
+  background-color: white;
+  border-radius: 5px;
+  width: 45%;
+}
+.ManuScreen button:hover {
+  background-color: green;
+  color: white;
+}
+
+.AddMember button {
+  width: 45%;
+  border: 2px solid royalblue;
+  border-radius: 5px;
+  text-align: center;
+}
+.AddMember button:hover {
+  cursor: pointer;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+}
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+.tree {
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+  white-space: nowrap;
+  min-width: 800px;
+  min-height: 500px;
+}
+span {
+  margin: 5px;
+}
+
+.tree ul {
+  z-index: 0;
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  cursor: pointer;
+}
+/*We will use ::before and ::after to draw the connectors*/
+.tree li::before,
+.tree li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+/*We need to remove left-right connectors from elements without any siblings*/
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0;
+}
+/*Remove left connector from first child and right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+}
+/*Time to add downward connectors from parents*/
+.tree ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+.tree li div {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 11px;
+  display: inline-block;
+  min-width: 80px;
+  min-height: 30px;
+  border: 2px solid royalblue;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  z-index: 0;
+}
+.tree li div .male {
+  background-color: lightblue;
+  display: inline-block;
+  width: 90px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.tree li div .female {
+  background-color: lightpink;
+  display: inline-block;
+  width: 90px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.tree li div .spacer {
+  background-color: lightblue;
+  display: inline-block;
+  width: 10px;
+}
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li div:hover,
+.tree li div:hover + ul li div {
+  background: #c8e4f8;
+  color: #000;
+  border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li div:hover + ul li::after,
+.tree li div:hover + ul li::before,
+.tree li div:hover + ul::before,
+.tree li div:hover + ul ul::before {
+  border-color: #94a0b4;
+}
+/*******************************************************************************************************/
+/*******************************************************************************************************/

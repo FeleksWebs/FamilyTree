@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <head> </head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <div class="Header">
+      <button id="createNew" onclick="CreateNewUser()">Create New User</button>
+    </div>
+
+    <div id="ManuScreen" class="ManuScreen">
+      <div class="userInfo">
+        <h3>Current User</h3>
+        <b> <h2 id="CurrentUserInfo"></h2></b>
+      </div>
+
+      <div class="AddMember" id="AddMember">
+        <button onclick="addPartner()" id="AddPartner">
+          <p>Add Partner</p>
+        </button>
+        <button onclick="AddChild()"><p>Add Child</p></button>
+      </div>
+      <button onclick="ChangeInfo()" id="ChangeInfo">Change Info</button>
+      <button id="deleteUser" onclick=" DeleteUser()">Delete User</button>
+      <div class="closeBtn">
+        <button onclick="CloseMenu()" id="CloseMenu">Close</button>
+      </div>
+    </div>
+
+    <div class="tree" id="FamilyTreeDiv"></div>
+
+    <script src="Main.js"></script>
+    <script src="AddUsers.js"></script>
+    <script src="UserInfoMenu.js"></script>
+  </body>
+</html>

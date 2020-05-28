@@ -1,0 +1,10 @@
+- Create new users
+- Put new users into array
+- Display users object in a format of 
+Name:
+Surname:
+Parents:  / 
+Children: /
+
+- Put these into an array
+- Create new feature to find a specific user
